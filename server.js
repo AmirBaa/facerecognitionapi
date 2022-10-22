@@ -8,11 +8,8 @@ const bcrypt = require('bcrypt-nodejs');
 const db = knex({
     client: 'pg',
     connection: {
-        host: 'postgresql-defined-51843',
-        port: 5432,
-        user: 'postgres',
-        password: 'maradona10',
-        database: 'smart-bug'
+        host: process.env.DATABASE_URL,
+        ssl: true
     }
 });
 
